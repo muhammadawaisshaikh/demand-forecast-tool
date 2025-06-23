@@ -4,9 +4,16 @@ from datetime import datetime
 
 from models.models import SalesRequest
 
-router = APIRouter()
+router = APIRouter(
+    prefix="/api/sales-prediction-naive",
+    tags=["Naive based Sales Prediction"]
+)
 
-@router.post("/sales-prediction")
+@router.get("/")
+def get_info():
+    return {"message": "Naive-based sales prediction endpoint"}
+
+@router.post("/sales-prediction-naive")
 async def analyze_sales(data: SalesRequest):
     product_sales = defaultdict(list)
 
