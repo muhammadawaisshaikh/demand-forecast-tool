@@ -11,7 +11,7 @@ router = APIRouter(
 def get_info():
     return {"message": "ML-based sales prediction endpoint"}
 
-@router.post("/")
+@router.post("/sales-prediction-ml")
 def predict_sales(data: SalesPredictionInput):
     prediction = train_and_predict([s.dict() for s in data.SalesOrderReport])
     return {
