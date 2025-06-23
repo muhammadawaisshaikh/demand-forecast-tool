@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 # Import routers
 from api.sales_prediction_naive.sales_prediction import router as naive_router
@@ -8,6 +9,14 @@ app = FastAPI(
     title="AI Forecasting for Sales & Demand",
     description="Provides insights and predictions based on sales data exported from SAP or similar systems.",
     version="1.0.0"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Register Api routers
