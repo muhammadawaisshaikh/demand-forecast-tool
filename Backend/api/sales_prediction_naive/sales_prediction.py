@@ -5,7 +5,7 @@ from datetime import datetime
 from models.models import SalesRequest
 
 router = APIRouter(
-    prefix="/api/sales-prediction-naive",
+    prefix="/api",
     tags=["Naive based Sales Prediction"]
 )
 

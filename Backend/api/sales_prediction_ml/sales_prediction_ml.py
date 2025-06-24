@@ -3,7 +3,7 @@ from .schema import SalesPredictionInput
 from .model import train_and_predict
 
 router = APIRouter(
-    prefix="/api/sales-prediction-ml",
+    prefix="/api",
     tags=["ML Sales Prediction"]
 )
 
